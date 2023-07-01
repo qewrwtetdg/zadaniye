@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>экзамен</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/1.css">
+</head>
+<body>
+    <div class="color-panel"> <!--див класс при наждатии на круги меняется цвет-->
+        <div id="blue" data-color="#b3e5fc" onclick="changeColor('blue')"> 
+        </div>
+        <div id="red" data-color="#ffcdd2" onclick="changeColor('red')"> 
+        </div>
+        <div id="purple" data-color="#b39ddb" onclick="changeColor('purple')">  
+        </div>
+        <div id="green" data-color="#c5e1a5" onclick="changeColor('green')">
+        </div>
+        <div id="orange" data-color="#fde7d9" onclick="changeColor('orange')"> 
+        </div>
+    </div>
+    <input class="btnq" type="button" id="btn"><!--кнопка шрифтов-->
+
+<center>
+    <h2 class="r">Добавить заказ в корзину</h2>
+    <form action="add_order_item.html" method="POST"><!--кнопка добавления в корзину заказа-->
+        <center> <input type="submit" value="Добавить заказ в корзину"></center>
+    </form>
+    <h2 class="r">Выйти из личного кабинета</h2>
+    <form action="index.html" method="POST"><!--кнопка перехода к кнопке Вход-->
+        <center> <input type="submit" value="Выйти"></center>
+    </form>
+    
+
+</center>
+
+
+
+
+
+
+
+
+    <script> //скрипты
+    //скрипт изменения размера шрифта
+        let btn = document.getElementById("btn");
+        let elems = document.getElementsByClassName("r");
+        let index = 0; 
+        let params = [["12", "Крупный"], ["25", "Мелкий"]];
+        changeSize(); // В первый раз установить размер шрифта и надпись 
+        btn.onclick = changeSize;
+ 
+        function changeSize() {
+            for (let e of elems)
+                e.style.fontSize = params[index][0] + "pt";
+ 
+            btn.value = params[index][1] + " шрифт";
+            index = +!index; // Если было 0, то станет 1. Если было 1, то станет 0. 
+        }
+    //скрипт изменения цвета фона
+        function changeColor(colorValue) {
+        document.body.style.background =     document.getElementById(colorValue).dataset.color;
+        }
+    </script>
+</body>
+</html>
