@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Добавить заказ</title>
+  <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<form action="add_order_item.php" method="POST">
+  <label><h2>Добавить заказ</h2></label>
+  <label>Номер заказа:</label>
+  <input type="text" name="order_id" required><br><br>
+
+  <label>Имя заказа:</label>
+  <input type="text" name="item_name" required><br><br>
+
+  <label>Цена заказа:</label>
+  <input type="text" name="item_price" required><br><br>
+
+  <input type="submit" value="Добавить заказ">
+</form>
+</body>
+</html>
